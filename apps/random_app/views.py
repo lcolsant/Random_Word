@@ -25,10 +25,9 @@ def random_word(request):
     return redirect('/')
 
 def reset(request):
-    print 'got here!'
     try:
-        # print "got here!"
         del request.session['counter']
+        # request.session.clear()     ####this will work as well
     except KeyError:
         print 'sorry, cannot reset counter'
         pass
